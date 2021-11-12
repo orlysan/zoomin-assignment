@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
     <Container>
-      <h1>The Star Waar API</h1>
+      <h1>The Star War API</h1>
       <Toc></Toc>
       < ChosenFilm></ChosenFilm>
     </Container>
