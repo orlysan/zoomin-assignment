@@ -1,27 +1,28 @@
 import React, { useState , useEffect } from 'react';
-//import { getFilmsList } from '../../axios';
-import axios from 'axios';
+import { getFilmsList } from '../../axios';
 
 
-function Toc (){
+
+function Toc (props){
    const [data, setData] = useState([]);
+   const [err, setErr] = useState('');
 
 
    useEffect(() => {
-    axios
-    .get('https://swapi.dev/api/films')
-    .then(res => {
-        setData(res.data.results)
-    }) 
+    getFilmsList(setData, setErr)
 }, [])
 
-   console.log(data)
+    
+    const findMovie = (movie) => {
+        props.setChosenFilm(movie)
+    }
+    
     return (
         <div>
             <h1>TOC</h1>
             <ul>
                {data.map( movie => (
-                   <li key={movie.episode_id}>{movie.title}</li>
+                   <li key={movie.episode_id} onClick={(e) => findMovie(movie, e)}>{movie.title}</li>
                ))}
             </ul>
         </div>

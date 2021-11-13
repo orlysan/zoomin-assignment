@@ -1,18 +1,14 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-import Toc from './Components/Toc/Toc';
 import './App.css';
-import ChosenFilm from './Components/ChosenFilm/ChosenFilm';
+import Page from './Pages/Page';
+
 
 function App() {
+
   return (
     <div className="App">
-    <Container>
-      <h1>The Star War API</h1>
-      <Toc></Toc>
-      < ChosenFilm></ChosenFilm>
-    </Container>
+    <Page/>
     </div>
   );
 }
