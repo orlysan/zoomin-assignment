@@ -1,10 +1,17 @@
-sap.ui.define([
-	"sap/ui/base/ManagedObject"
-], function(
-	ManagedObject
-) {
-	"use strict";
+import React from 'react';
+import { Navbar , Nav , Container } from 'react-bootstrap';
 
-	return ManagedObject.extend("undefined", {
-	});
-});
+function Header(){
+    return (
+        <Navbar>
+            <Container>
+                <Navbar.Brand href="#home">Star War</Navbar.Brand>
+                <Nav>
+                    <Nav.Link href='#/favorites'>Favorites</Nav.Link>
+                </Nav>
+            </Container>
+        </Navbar>
+    )
+}
+
+export default Header;
