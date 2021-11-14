@@ -1,14 +1,26 @@
 import Button from '@restart/ui/esm/Button';
-import React from 'react';
+import React, { useState } from 'react';
 
 function ChosenFilm (props){
+
+    const [favorite, setFvorite] = useState([])
+
+    const saveToLocalStorage = (item) => {
+        localStorage.setItem('star-wars-favorite', JSON.stringify(item))
+    }
+
+    const addToFavoriteList = () => {
+        const addMovie = [...favorite, props.chosenFilm.title]
+        setFvorite(addMovie)
+        saveToLocalStorage(addMovie)
+    }
  
-    console.log(props.chosenFilm)
+    
     return (
         <div>
             <h1>{props.chosenFilm.title}</h1>
             <p>{props.chosenFilm.opening_crawl}</p>
-            <Button>Add to favorite</Button>
+            <Button onClick={addToFavoriteList}>Add to favorite</Button>
         </div>
     )
 }

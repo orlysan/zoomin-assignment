@@ -1,14 +1,16 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Page from './Pages/Page';
+import Favorite from './Pages/Favorite/Favorite';
+import Home from './Pages/Home';
 
 
 function App() {
 
   return (
     <div className="App">
-    <Page/>
+    <Home/>
+    <Favorite />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Toc from '../Components/Toc/Toc';
 import ChosenFilm from '../Components/ChosenFilm/ChosenFilm';
 import { Container } from 'react-bootstrap';
 
-function Page() {
+function Home() {
 
   const [chosenFilm, setChosenFilm] = useState({})
 
@@ -19,4 +19,4 @@ function Page() {
   );
 }
 
-export default Page;
+export default Home;
