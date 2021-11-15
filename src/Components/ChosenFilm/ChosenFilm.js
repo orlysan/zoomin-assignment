@@ -6,10 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 function ChosenFilm (){
 
+    const dispatch = useDispatch();
+
     // localStorage.setItem('star-wars-favorite', JSON.stringify(item))
 
 
     const addMovieToFavorite = () => {
+        dispatch()
         console.log('fav')
         // saveToLocalStorage(addMovie)
     }

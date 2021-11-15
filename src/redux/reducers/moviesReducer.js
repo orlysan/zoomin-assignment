@@ -9,6 +9,8 @@
     switch (type) {
         case ActionTypes.GET_MOVIES_LIST:
            return {...state, movies:payload};
+         case ActionTypes.ADD_TO_FAVORITE:
+            return {}
 
         default:
             return state;

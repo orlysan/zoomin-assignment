@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect ,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList } from '../../redux/actions/actions';
 import axios from 'axios';
-import { ListGroup } from 'react-bootstrap';
+import { ListGroup, Modal } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import './Toc.css'
+import Button from '@restart/ui/esm/Button';
 
 
 function Toc (){
@@ -14,7 +17,7 @@ function Toc (){
         const res = await axios
         .get('https://swapi.dev/api/films')
         .catch((err) => {
-            console.log('err', err)
+            handleShow(err)
         });
         dispatch(getMoviesList(res.data.results))
     }
@@ -36,13 +39,29 @@ function Toc (){
         </ListGroup.Item>
         )
     })
-   
+    
+    //modeal error function
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <ListGroup variant="flush">
-            {mapList}   
+            {mapList}  
+
+             <Modal show={show} onHide={handleClose}>
+                <Modal.Body>Somethig wrong with the link... </Modal.Body>
+            <Button variant="secondary" onClick={handleClose}>Close</Button>      
+            </Modal> 
+
         </ListGroup>   
     )
 }
 
-export default Toc; 
+const mapStateToProps = (state) => {
+    return {
+        allMovies: state.movies,
+    }
+}
+
+export default connect(mapStateToProps)(Toc); 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar , Nav , Container , NavLink} from 'react-bootstrap';
+import { Navbar , Nav , Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 
@@ -7,10 +8,10 @@ function Header(){
     return (
         <Navbar className="nav-header">
             <Container>
-                <Navbar.Brand href="#/">Star War</Navbar.Brand>
-                <Nav>
-                    <NavLink href='#/favorites'>Favorites</NavLink>
-                </Nav>
+                <Navbar.Brand>
+                    <Link to="/">Star War</Link>
+                </Navbar.Brand>
+                    <Link to='/favorites'>Favorites</Link>  
             </Container>
         </Navbar>
     )
