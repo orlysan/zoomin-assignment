@@ -1,6 +1,6 @@
 import React, { useEffect ,useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMoviesList } from '../../redux/actions/actions';
+import { getMoviesList  , setFavoriteMovie} from '../../redux/actions/actions';
 import axios from 'axios';
 import { ListGroup, Modal } from 'react-bootstrap';
 import { connect } from 'react-redux';
@@ -10,7 +10,7 @@ import Button from '@restart/ui/esm/Button';
 
 function Toc (){
 
-    const movies = useSelector((state) => state.allMovies.movies);
+    const movies = useSelector((state) => state.moviesReducer.movies);
     const dispatch = useDispatch();
 
     const fetchFilmsList = async () => {
@@ -26,15 +26,15 @@ function Toc (){
         fetchFilmsList()
     }, [])
 
-    function findMovie(item){
-        console.log(item.episode_id)
+    function choseMovie(item){
+        dispatch(setFavoriteMovie(item))
     }
 
     const mapList = movies.map( movie => {
         return (
         <ListGroup.Item 
             key={movie.episode_id} 
-            onClick={(e) => findMovie(movie, e)}>
+            onClick={(e) => choseMovie(movie, e)}>
                 {movie.title}
         </ListGroup.Item>
         )
@@ -60,7 +60,7 @@ function Toc (){
 
 const mapStateToProps = (state) => {
     return {
-        allMovies: state.movies,
+        moviesReducer: state.movies,
     }
 }
 

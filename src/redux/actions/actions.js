@@ -13,3 +13,10 @@ export const addToFavorite = (favorite) => {
         payload: favorite,
     }
 }
+
+export const setFavoriteMovie = (selected) => {
+    return {
+        type: ActionTypes.SELECTED_MOVIE,
+        payload: selected
+    }
+}

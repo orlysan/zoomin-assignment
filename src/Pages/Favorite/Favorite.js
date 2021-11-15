@@ -1,20 +1,27 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
-import { useSelector , useDispatch } from 'react-redux';
-import FavoriteList from '../../Components/FavoriteList/FavoriteList';
+import { Container, ListGroup } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
+
 
 function Favorite (){
 
-    const favoriteList = useSelector(state => state.allMovies.Favorite);
-    const dispatch = useDispatch();
-    const createFavoriteCard = () => {
-        dispatch(favoriteList)
-    }
-console.log(createFavoriteCard)
+    const favoriteList = useSelector(state => state.moviesReducer.favorites);
+    
+    const createFavoriteCard = favoriteList.map(currentMovie => {
+           
+            return (
+                <ListGroup.Item>
+                        {currentMovie}
+                </ListGroup.Item>
+                )
+        })
+         
+
+    
     return (
         <Container className="favorite-container">
-            <h3 className="list-title">My favorite movie:</h3>
-            <FavoriteList />
+            <h3 className="list-title">My favorite movies:</h3>
+            <ListGroup>{createFavoriteCard}</ListGroup>
         </Container>
        
     )
