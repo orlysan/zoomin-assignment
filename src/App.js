@@ -5,17 +5,14 @@ import React from 'react';
 import { BrowserRouter , Route, Routes} from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Favorite from './Pages/Favorite/Favorite';
-import Home from './Pages/Home';
-import { Container } from 'react-bootstrap';
-
-
+import Home from './Pages/Home/Home';
 
 
 function App() {
 
   return (
-    <Container className="App">
-      <BrowserRouter>
+    <div className="App">
+      <BrowserRouter >
     
       <Header />
       <Routes>
@@ -24,7 +21,7 @@ function App() {
       </Routes> 
       
        </BrowserRouter>
-    </Container>
+   </div> 
    
    
   );
