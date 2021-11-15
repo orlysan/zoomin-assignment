@@ -1,29 +1,41 @@
-import React, { useState , useEffect } from 'react';
-import { getFilmsList } from '../../axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getMoviesList } from '../../redux/actions/actions';
+import axios from 'axios';
 
 
 
-function Toc (props){
-   const [data, setData] = useState([]);
-   const [err, setErr] = useState('');
 
+function Toc (){
 
-   useEffect(() => {
-    getFilmsList(setData, setErr)
-}, [])
+    const movies = useSelector((state) => state);
+    const dispatch = useDispatch();
 
-    
-    const findMovie = (movie) => {
-        props.setChosenFilm(movie)
+    const fetchFilmsList = async () => {
+        const res = await axios
+        .get('https://swapi.dev/api/films')
+        .catch((err) => {
+            console.log('err', err)
+        });
+        dispatch(getMoviesList(res.data.results))
     }
+    
+    useEffect(() => {
+        fetchFilmsList()
+    }, [])
+console.log(movies)
+    
+    // const findMovie = (movie) => {
+    //     props.setChosenFilm(movie)
+    // }
 
     return (
         <div>
-            <ul>
+            {/* <ul>
                {data.map( movie => (
-                   <li key={movie.episode_id} onClick={(e) => findMovie(movie, e)}>{movie.title}</li>
+                   <li key={movie.episode_id}>{movie.title}</li>
                ))}
-            </ul>
+            </ul> */}
         </div>
     )
 }

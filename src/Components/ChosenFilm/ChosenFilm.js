@@ -1,26 +1,28 @@
 import Button from '@restart/ui/esm/Button';
-import React, { useState } from 'react';
+import React  from 'react';
+
 
 function ChosenFilm (props){
 
-    const [favorite, setFvorite] = useState([])
+   
+    // const {addMovieToFavorite} = useContext(GlobalContext)
+    // console.log(props)
+    // const saveToLocalStorage = (item) => {
+    //     localStorage.setItem('star-wars-favorite', JSON.stringify(item))
+    // }
 
-    const saveToLocalStorage = (item) => {
-        localStorage.setItem('star-wars-favorite', JSON.stringify(item))
-    }
-
-    const addToFavoriteList = () => {
-        const addMovie = [...favorite, props.chosenFilm.title]
-        setFvorite(addMovie)
-        saveToLocalStorage(addMovie)
-    }
+    // const addToFavoriteList = () => {
+        
+    //     setFvorite(addMovie)
+    //     saveToLocalStorage(addMovie)
+    // }
  
     
     return (
         <div>
             <h1>{props.chosenFilm.title}</h1>
             <p>{props.chosenFilm.opening_crawl}</p>
-            <Button onClick={addToFavoriteList}>Add to favorite</Button>
+            <Button onClick={() => addMovieToFavorite(props.chosenFilm.title)}>Add to favorite</Button>
         </div>
     )
 }
