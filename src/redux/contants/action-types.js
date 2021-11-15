@@ -1,7 +1,6 @@
 
     export const ActionTypes = {
         GET_MOVIES_LIST: "GET_MOVIES_LIST",
-        GET_DETAIL_MOVIE: "GET_DETAIL_MOVIE",
         ADD_TO_FAVORITE: "ADD_TO_FAVORITE",
         REMOVE_FROM_FAVORITE: "REMOVE_FROM_FAVORITE"
     }

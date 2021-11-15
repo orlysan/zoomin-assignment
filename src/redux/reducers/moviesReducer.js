@@ -1,7 +1,8 @@
  import { ActionTypes } from '../contants/action-types';
  
  const initialState = {
-    movies:[]
+    movies:[],
+    favorites:[]
  }
  
  export const moviesReducer = (state = initialState, {type, payload}) => {
