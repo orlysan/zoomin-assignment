@@ -1,16 +1,17 @@
 import React from 'react';
 import Toc from '../Components/Toc/Toc';
 import ChosenFilm from '../Components/ChosenFilm/ChosenFilm';
-import { Container } from 'react-bootstrap';
+import { Container , Row , Col} from 'react-bootstrap';
 
 function Home() {
 
   return (
-   
     <Container>
       <h1>The Star War API</h1>
-      <Toc />
-      <ChosenFilm />
+      <Row>
+        <Col sm={4}><Toc /></Col>
+        <Col sm={8}><ChosenFilm /></Col> 
+      </Row>
     </Container>
   
   );

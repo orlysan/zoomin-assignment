@@ -1,28 +1,24 @@
 import Button from '@restart/ui/esm/Button';
 import React  from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 function ChosenFilm (){
 
-   
-    // const {addMovieToFavorite} = useContext(GlobalContext)
-    // console.log(props)
-    // const saveToLocalStorage = (item) => {
-    //     localStorage.setItem('star-wars-favorite', JSON.stringify(item))
-    // }
+    // localStorage.setItem('star-wars-favorite', JSON.stringify(item))
 
-    // const addToFavoriteList = () => {
-        
-    //     setFvorite(addMovie)
-    //     saveToLocalStorage(addMovie)
-    // }
+
+    const addMovieToFavorite = () => {
+        console.log('fav')
+        // saveToLocalStorage(addMovie)
+    }
  
     
     return (
         <div>
-            {/* <h1>{props.chosenFilm.title}</h1>
-            <p>{props.chosenFilm.opening_crawl}</p>
-            <Button onClick={() => addMovieToFavorite(props.chosenFilm.title)}>Add to favorite</Button> */}
+            <h1> chosenFilm.title</h1>
+            <p>chosenFilm.opening_crawl</p>
+            <Button onClick={addMovieToFavorite}>Add to favorite</Button>
         </div>
     )
 }

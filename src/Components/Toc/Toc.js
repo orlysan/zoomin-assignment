@@ -23,8 +23,18 @@ function Toc (){
         fetchFilmsList()
     }, [])
 
+    function findMovie(item){
+        console.log(item.episode_id)
+    }
+
     const mapList = movies.map( movie => {
-        return <ListGroup.Item key={movie.episode_id}>{movie.title}</ListGroup.Item>
+        return (
+        <ListGroup.Item 
+            key={movie.episode_id} 
+            onClick={(e) => findMovie(movie, e)}>
+                {movie.title}
+        </ListGroup.Item>
+        )
     })
    
 
