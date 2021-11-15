@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList } from '../../redux/actions/actions';
 import axios from 'axios';
-
-
+import { ListGroup } from 'react-bootstrap';
 
 
 function Toc (){
 
-    const movies = useSelector((state) => state);
+    const movies = useSelector((state) => state.allMovies.movies);
     const dispatch = useDispatch();
 
     const fetchFilmsList = async () => {
@@ -23,20 +22,16 @@ function Toc (){
     useEffect(() => {
         fetchFilmsList()
     }, [])
-console.log(movies)
-    
-    // const findMovie = (movie) => {
-    //     props.setChosenFilm(movie)
-    // }
+
+    const mapList = movies.map( movie => {
+        return <ListGroup.Item key={movie.episode_id}>{movie.title}</ListGroup.Item>
+    })
+   
 
     return (
-        <div>
-            {/* <ul>
-               {data.map( movie => (
-                   <li key={movie.episode_id}>{movie.title}</li>
-               ))}
-            </ul> */}
-        </div>
+        <ListGroup variant="flush">
+            {mapList}   
+        </ListGroup>   
     )
 }
 

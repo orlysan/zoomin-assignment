@@ -2,7 +2,7 @@ import Button from '@restart/ui/esm/Button';
 import React  from 'react';
 
 
-function ChosenFilm (props){
+function ChosenFilm (){
 
    
     // const {addMovieToFavorite} = useContext(GlobalContext)
@@ -20,9 +20,9 @@ function ChosenFilm (props){
     
     return (
         <div>
-            <h1>{props.chosenFilm.title}</h1>
+            {/* <h1>{props.chosenFilm.title}</h1>
             <p>{props.chosenFilm.opening_crawl}</p>
-            <Button onClick={() => addMovieToFavorite(props.chosenFilm.title)}>Add to favorite</Button>
+            <Button onClick={() => addMovieToFavorite(props.chosenFilm.title)}>Add to favorite</Button> */}
         </div>
     )
 }
