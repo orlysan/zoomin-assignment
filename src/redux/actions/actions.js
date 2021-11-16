@@ -17,6 +17,13 @@ export const addToFavorite = (favorite) => {
 export const setFavoriteMovie = (selected) => {
     return {
         type: ActionTypes.SELECTED_MOVIE,
-        payload: selected
+        payload: selected,
+    }
+}
+
+export const removeFromFavorite = (removeFav) => {
+    return {
+        type: ActionTypes.REMOVE_FROM_FAVORITE,
+        payload: removeFav,
     }
 }

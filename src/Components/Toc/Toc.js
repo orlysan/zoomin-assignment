@@ -10,6 +10,7 @@ import Button from '@restart/ui/esm/Button';
 function Toc (){
 
     const movies = useSelector((state) => state.moviesReducer.movies);
+    const addedToFavorite = useSelector((state) => state.moviesReducer.favorites)
     const dispatch = useDispatch();
 
     const fetchFilmsList = async () => {
@@ -29,12 +30,20 @@ function Toc (){
         dispatch(setFavoriteMovie(item))
     }
 
+   
+
     const mapList = movies.map( movie => {
+        const includeFav = () => {
+            if(addedToFavorite.includes(movie.title)){
+                return  <span class="material-icons">favorite</span>;
+            }
+        }
         return (
         <ListGroup.Item 
             key={movie.episode_id} 
             onClick={(e) => choseMovie(movie, e)}>
                 {movie.title}
+                {includeFav()}
         </ListGroup.Item>
         )
     })
@@ -43,6 +52,8 @@ function Toc (){
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    
 
     return (
         <ListGroup variant="flush">

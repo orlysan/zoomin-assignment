@@ -1,5 +1,12 @@
 .list-group-item {
-    cursor:pointer
+    cursor:pointer;
+    display: flex;
+    justify-content:space-between;
+    padding: 10px 40px 10px 40px;
+}
+
+.list-group-item span{
+    color:rgb(148, 141, 133);
 }
 
 .list-group-item:hover{

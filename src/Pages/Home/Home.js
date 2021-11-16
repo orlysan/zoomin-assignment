@@ -18,7 +18,7 @@ function Home() {
 
       <Row>
         <Col sm={4}><Toc /></Col>
-        <Col sm={8}>{selected != [] ?  <ChosenFilm /> : "" }</Col> 
+        <Col sm={8}>{selected !== [[]] ?  <ChosenFilm /> : "" }</Col> 
       </Row>
     </Container>
   

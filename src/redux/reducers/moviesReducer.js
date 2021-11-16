@@ -14,9 +14,14 @@
             return {...state, selectedMovie:payload};
          case ActionTypes.ADD_TO_FAVORITE: 
             return {...state, favorites:payload};
+         case ActionTypes.REMOVE_FROM_FAVORITE:{
+            return {...state, 
+               favorites: state.favorites.filter(item => item !== payload)
+               };
+         }
 
         default:
-            return state;
+            return state
     }
  }
 

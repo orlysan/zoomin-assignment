@@ -1,4 +1,4 @@
-import Button from '@restart/ui/esm/Button';
+import Button from 'react-bootstrap/Button'
 import React  from 'react';
 import { Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,13 +14,11 @@ function ChosenFilm (){
 
 
     const addMovieToFavorite = () => {
-        const findFavorite = favoriteList.find((fav) => fav == favorite.title);
+        const findFavorite = favoriteList.find((fav) => fav === favorite.title);
         if(findFavorite == undefined){
             favoriteList.push(favorite.title)
             dispatch(addToFavorite(favoriteList))
         }
-    
-        localStorage.setItem('star-wars-favorite', JSON.stringify(favoriteList))
     }
  
     
