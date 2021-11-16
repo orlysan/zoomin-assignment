@@ -1,7 +1,6 @@
 
 .favorite-container h2 {
-    padding-top: 3rem;
-    
+    padding: 3rem 0 3rem 0;
     font-family: 'Open Sans Condensed', serif;
     font-size: 3rem;
 }

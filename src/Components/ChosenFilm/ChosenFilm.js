@@ -3,6 +3,7 @@ import React  from 'react';
 import { Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToFavorite } from '../../redux/actions/actions';
+import './ChosenFilm.css';
 
 
 function ChosenFilm (){
@@ -23,7 +24,7 @@ function ChosenFilm (){
  
     
     return (
-        <Card>
+        <Card className="chosen-film-card">
             <Card.Body>
                 <Card.Title>{favorite.title}</Card.Title>
                 <Card.Text>{favorite.opening_crawl}</Card.Text>

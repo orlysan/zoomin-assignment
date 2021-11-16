@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList  , setFavoriteMovie} from '../../redux/actions/actions';
 import axios from 'axios';
 import { ListGroup, Modal } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
 import './Toc.css'
-import Button from '@restart/ui/esm/Button';
 
 
 function Toc (){
@@ -33,17 +33,12 @@ function Toc (){
    
 
     const mapList = movies.map( movie => {
-        const includeFav = () => {
-            if(addedToFavorite.includes(movie.title)){
-                return  <span class="material-icons">favorite</span>;
-            }
-        }
+       
         return (
         <ListGroup.Item 
             key={movie.episode_id} 
             onClick={(e) => choseMovie(movie, e)}>
                 {movie.title}
-                {includeFav()}
         </ListGroup.Item>
         )
     })
