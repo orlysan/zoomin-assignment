@@ -1,16 +1,13 @@
-
 .favorite-container h2 {
-    padding: 3rem 0 3rem 0;
-    font-family: 'Open Sans Condensed', serif;
-    font-size: 3rem;
+  padding: 3rem 0 3rem 0;
+  font-family: 'Open Sans Condensed', serif;
+  font-size: 3rem;
 }
 
-span button{
-    visibility: hidden;
+span button {
+  visibility: hidden;
 }
 
-span:hover button{
-    visibility: visible;
+span:hover button {
+  visibility: visible;
 }
-
-
