@@ -8,7 +8,7 @@ function Header() {
     <Navbar className="nav-header">
       <Container>
         <Navbar.Brand>
-          <Link to="#/">Star War</Link>
+          <Link to="/">Star War</Link>
         </Navbar.Brand>
         <Link to="/favorites">Favorites</Link>
       </Container>
