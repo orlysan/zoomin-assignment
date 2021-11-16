@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getMoviesList  , setFavoriteMovie} from '../../redux/actions/actions';
 import axios from 'axios';
 import { ListGroup, Modal } from 'react-bootstrap';
-import { connect } from 'react-redux';
 import './Toc.css'
 import Button from '@restart/ui/esm/Button';
 
@@ -58,10 +57,5 @@ function Toc (){
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        moviesReducer: state.movies,
-    }
-}
 
-export default connect(mapStateToProps)(Toc); 
+export default Toc; 

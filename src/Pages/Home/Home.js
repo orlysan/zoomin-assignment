@@ -3,8 +3,13 @@ import Toc from '../../Components/Toc/Toc';
 import ChosenFilm from '../../Components/ChosenFilm/ChosenFilm';
 import { Container , Row , Col } from 'react-bootstrap';
 import './Home.css'
+import { useSelector } from 'react-redux';
 
 function Home() {
+
+  const selected = useSelector((state) => state.moviesReducer.selectedMovie);
+  
+  console.log(selected)
 
   return (
     <Container className="home-page">
@@ -13,7 +18,7 @@ function Home() {
 
       <Row>
         <Col sm={4}><Toc /></Col>
-        <Col sm={8}><ChosenFilm /></Col> 
+        <Col sm={8}>{selected != [] ?  <ChosenFilm /> : "" }</Col> 
       </Row>
     </Container>
   

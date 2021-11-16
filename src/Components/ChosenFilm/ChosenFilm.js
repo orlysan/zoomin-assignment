@@ -10,8 +10,7 @@ function ChosenFilm (){
     const favorite = useSelector((state) => state.moviesReducer.selectedMovie);
     const favoriteList = useSelector((state) => state.moviesReducer.favorites);
     const dispatch = useDispatch();
-
-    // localStorage.setItem('star-wars-favorite', JSON.stringify(item))
+    
 
 
     const addMovieToFavorite = () => {
@@ -20,8 +19,8 @@ function ChosenFilm (){
             favoriteList.push(favorite.title)
             dispatch(addToFavorite(favoriteList))
         }
-        console.log(favorite.title)
-        // saveToLocalStorage(addMovie)
+    
+        localStorage.setItem('star-wars-favorite', JSON.stringify(favoriteList))
     }
  
     
