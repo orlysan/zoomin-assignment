@@ -8,8 +8,6 @@ import { useSelector } from "react-redux";
 function Home() {
   const selected = useSelector(state => state.moviesReducer.selectedMovie);
 
-  console.log(selected);
-
   return (
     <Container className="home-page">
       <h1 className="home-page-title">The Star War API</h1>
@@ -19,7 +17,7 @@ function Home() {
           <Toc />
         </Col>
         <Col sm={8}>
-          {selected !== [[]] ? <ChosenFilm /> : ""}
+          {selected !== [] ? <ChosenFilm /> : ""}
         </Col>
       </Row>
     </Container>
